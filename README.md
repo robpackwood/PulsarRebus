@@ -20,4 +20,4 @@ docker exec -it pulsar /pulsar/bin/pulsar-admin namespaces set-retention -s 100M
 ```
 
 ### Usage
-Open the PulsarRebus.sln in Visual Studio
+Open the PulsarRebus.sln in Visual Studio. Right-click on the Solution in the Solution Explorer window and "Set Startup Projects..." The PulsarRebusConsumer, PulsarRebusPublisher, and PulsarRebusSaga should be configured to start. Run the application (F5) and use the Publisher's console window to interact with the program. Using option 1 to publish a Saga will throw many exceptions internally. Using option 2 to publish standard messages should work without any issues.
