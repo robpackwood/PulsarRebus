@@ -29,6 +29,7 @@ public class PublisherService : BackgroundService
             $"Press '1' to publish a test saga and '2' for {MessageCount} standard pub/sub messages. Ctrl+C to exit.");
 
         var key = Console.ReadKey();
+        Console.Clear();
 
         switch (key.KeyChar)
         {
