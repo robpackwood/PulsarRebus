@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<OutputPath>..\BuildOutput\PulsarRebusSaga</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<None Update="appSettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<!--This allows a unit test project related to this project to access this project's internal classes-->
+		<!--Assuming a convention with a test project name being "<this project name>.Tests"-->
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+			<_Parameter1>$(AssemblyName).Tests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\SharedLib\SharedLib.csproj" />
+	</ItemGroup>
+
+</Project>
